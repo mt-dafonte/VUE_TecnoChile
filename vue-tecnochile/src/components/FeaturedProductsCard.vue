@@ -1,5 +1,7 @@
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, onMounted, ref } from 'vue';
+import { listProducts } from '../services/api';
+
 
 // Define la prop 'products' que recibirá el array de productos
 const props = defineProps({
@@ -32,6 +34,13 @@ const getStockClass = (stock) => {
 const isOutOfStock = (stock) => {
   return stock === 0;
 };
+
+const listadoProductos = ref([]);
+// Simulación de carga de productos (puedes eliminar esto si los productos vienen de props)
+onMounted(async () => {
+  listadoProductos.value = await listProducts();
+});
+
 </script>
 
 <template>
@@ -42,7 +51,7 @@ const isOutOfStock = (stock) => {
       <!-- Sección de productos -->
       <section class="container my-5">
         <div class="row row-cols-1 row-cols-md-3 g-4 d-flex">
-            <div v-for="product in props.products" :key="product.id" class="col d-flex">
+            <div v-for="product in listadoProductos" :key="product.id" class="col d-flex">
                 <div class="card h-100 product-card shadow-sm">
                     <img :src="product.urlImagen" class="card-img-top product-image" alt="product.nombre">
                     <div class="card-body d-flex flex-column justify-content-between">

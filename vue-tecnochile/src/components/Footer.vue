@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <footer class="mt-auto ">
+    <footer class="mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-3">
