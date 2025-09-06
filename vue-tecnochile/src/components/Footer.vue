@@ -3,9 +3,10 @@
 </script>
 
 <template>
-    <footer class="mt-auto ">
+    <footer class="mt-5 ">
         <div class="container">
             <div class="row">
+            
                 <div class="col-md-4 mb-3">
                     <h5>Ubicados en</h5>
                     <p>Avenida Providencia 2124, local 6-A.</p>

@@ -1,6 +1,5 @@
 <script setup>
 
-import NavBar from './components/NavBar.vue';
 import Carrusel from './components/Carrusel.vue';
 import WelcomeTitle from './components/WelcomeTitle.vue';
 import { ref } from 'vue';
@@ -11,6 +10,7 @@ import AboutUs from './components/AboutUs.vue';
 import Contacto from './components/Contacto.vue';
 import Footer from './components/Footer.vue';
 import Whatsapp from './components/Whatsapp.vue';
+
 
 
 const featuredProducts = ref([]);
