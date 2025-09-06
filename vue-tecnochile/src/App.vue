@@ -1,6 +1,5 @@
 <script setup>
 
-import NavBar from './components/NavBar.vue';
 import Carrusel from './components/Carrusel.vue';
 import WelcomeTitle from './components/WelcomeTitle.vue';
 import { ref } from 'vue';
