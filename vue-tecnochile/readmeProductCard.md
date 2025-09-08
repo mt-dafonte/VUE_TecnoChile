@@ -21,6 +21,7 @@ const featuredProducts = ref([]);
 // Usamos .slice(0, 6) para tomar solo los primeros 6 productos del JSON.
 featuredProducts.value = productsData.productos.slice(0, 6);
 ```
+
 - import productsData from './data/products.json': Esta línea es mágica. Carga el contenido de tu archivo JSON en una variable productsData como si fuera un objeto de JavaScript.
 
 - const featuredProducts = ref([]): Usamos ref para crear una variable reactiva. Esto significa que cuando el valor de featuredProducts cambie, Vue actualizará automáticamente la vista (el HTML).
