@@ -20,7 +20,7 @@ const handleLogin = async () => {
             modalInstance.hide();
         }
 
-        alert(`¡Bienvenido, ${userData.name}!`);
+        alert(`¡Bienvenido, ${userData.email}!`);
 
     } catch (err) {
         error.value = err.message;
@@ -59,7 +59,7 @@ const handleLogout = () => {
             </li>
             <li class="nav-item dropdown" v-else>
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Hola, {{ user.name }}
+                  Hola, {{ user.email }}
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Mi perfil</a></li>
