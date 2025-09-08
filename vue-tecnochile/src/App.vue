@@ -15,7 +15,6 @@ import Whatsapp from './components/Whatsapp.vue';
 const featuredProducts = ref([]);
 // Accede al array 'productos' dentro del JSON
 // y filtra para obtener los primeros 6 productos.
-featuredProducts.value = productsData.productos.slice(0, 6);
 </script>
 
 <template>
