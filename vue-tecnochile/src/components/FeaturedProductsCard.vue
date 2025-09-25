@@ -43,7 +43,7 @@ function agregarAlCarrito(producto) {
 </script>
 
 <template>
-    <div class="container text-center my-5 bg-light p-2">
+    <div class="container text-center my-5 bg-light p-2" id="Productos">
       <h2>Productos destacados</h2>
       <p>Descubre nuestra amplia gama de productos tecnológicos.</p>
 
