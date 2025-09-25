@@ -1,21 +1,20 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { listProducts } from '../services/api.js';
+
+// Recibe productos como props desde App.vue
+const props = defineProps({
+  productos: {
+    type: Array,
+    required: true
+  }
+})
 
 // Input del buscador
 const busqueda = ref("");
 
-// Array para guardar productos cargados
-const productos = ref([]); 
-
-// Cargar productos al montar el componente
-onMounted(async () => {
-  productos.value = await listProducts();
-});
-
 // Filtrar productos según el input
 const productosFiltrados = computed(() => {
-  return productos.value.filter((producto) =>
+  return props.productos.filter((producto) =>
     producto.nombre.toLowerCase().includes(busqueda.value.toLowerCase())
   );
 });
@@ -38,7 +37,9 @@ const productosFiltrados = computed(() => {
     </div>
 
     <!-- Resultados -->
-    <section class="d-flex my-5 col col-lg-12 flex-wrap gap-3 justify-content-center">
+    <section 
+    v-if="busqueda.length > 0"
+    class="d-flex my-5 col col-lg-12 flex-wrap gap-3 justify-content-center">
       <div
         v-for="(producto, index) in productosFiltrados"
         :key="index"

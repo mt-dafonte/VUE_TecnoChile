@@ -1,7 +1,5 @@
 <script setup>
-import { defineProps, onMounted, ref } from 'vue';
-import { listProducts } from '../services/api';
-
+import { defineProps } from 'vue';
 
 // Define la prop 'products' que recibirá el array de productos
 const props = defineProps({
@@ -10,6 +8,9 @@ const props = defineProps({
     required: true
   }
 });
+
+// Emitir evento al padre
+const emit = defineEmits(['agregar']);
 
 // Función para formatear el precio como moneda (opcional, pero útil)
 const formatPrice = (price) => {
@@ -35,25 +36,23 @@ const isOutOfStock = (stock) => {
   return stock === 0;
 };
 
-const listadoProductos = ref([]);
-// Simulación de carga de productos (puedes eliminar esto si los productos vienen de props)
-onMounted(async () => {
-  listadoProductos.value = await listProducts();
-});
+function agregarAlCarrito(producto) {
+  emit('agregar', producto);
+}
 
 </script>
 
 <template>
-    <div id="title-products" class="container text-center my-5 bg-light p-2">
+    <div class="container text-center my-5 bg-light p-2">
       <h2>Productos destacados</h2>
       <p>Descubre nuestra amplia gama de productos tecnológicos.</p>
 
       <!-- Sección de productos -->
       <section class="container my-5">
         <div class="row row-cols-1 row-cols-md-3 g-4 d-flex">
-            <div v-for="product in listadoProductos" :key="product.id" class="col d-flex">
+            <div v-for="product in products" :key="product.id" class="col d-flex">
                 <div class="card h-100 product-card shadow-sm">
-                    <img :src="product.urlImagen" class="card-img-top product-image" alt="product.nombre">
+                    <img :src="product.urlImagen" class="card-img-top product-image" :alt="product.nombre">
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
                             <h5 class="card-title product-title">{{ product.nombre }}</h5>
@@ -64,14 +63,20 @@ onMounted(async () => {
                             <p class="card-text product-price"><strong>Precio: </strong>{{ formatPrice(product.precio) }}</p>
                             <p :class="['card-text', 'product-stock-status', getStockClass(product.stock)]">{{ getStockStatus(product.stock) }}</p>
                         </div>
-                        <button class="btn btn-primary add-to-cart-btn mt-3" :disabled="isOutOfStock(product.stock)" :class="{ 'btn-secondary' : isOutOfStock(product.stock) }">{{ isOutOfStock(product.stock) ? 'Agotado' : 'Agregar al carrito' }}</button>
+                        <button class="btn btn-primary add-to-cart-btn mt-3" 
+                        :disabled="isOutOfStock(product.stock)" 
+                        :class="{ 'btn-secondary' : isOutOfStock(product.stock) }"
+                        @click="agregarAlCarrito(product)" 
+                        >
+                        {{ isOutOfStock(product.stock) ? 'Agotado' : 'Agregar al carrito' }}
+                      </button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="text-center my-4">
-          <a href="/products.html" class="btn btn-primary">Ver todos los productos</a>
+          <button class="btn btn-primary" @click="$emit('verTodos')">Ver todos los productos</button>
         </div>
       </section>
     </div>
