@@ -1,4 +1,5 @@
 # Vue 3 + Vite
+# Módulo 6 - ABPRO3
 # TECNO CHILE (Vue 3)
 
 ## Descripción del Proyecto
@@ -102,36 +103,31 @@ VUE_TecnoChile/
 - Mensaje personalizado de bienvenida
 
 ## Requerimientos Cumplidos
-1	Home con lista de productos	✅
-2	Búsqueda de productos por nombre ✅
-3	Añadir productos a carrito de compra indicando cantidad	✅
-4	Ver carrito de compras (off canvas)	✅
-5	Lista de productos a través de simulación de API (api.js)	✅
-6	Respuesta asíncrona a través de promesa	✅
-7	Inicio de sesión con mail y contraseña (auth.js)✅
-8	Autenticación con credenciales válidas (correo@tecnochile.com // Password: 123456) ✅
-9	Mensaje de error con credenciales inválidas ✅
-10  Link a login en Navbar ✅
-11  Cerrar sesión en menú desplegable en Navbar ✅
-12  Formulario para inicio de sesión ✅
-13  Agregar y eliminar productos del carrito individualmente ✅
-14	Cálculo de precio total	✅
-15	Vaciar carrito completamente ✅
+- 1	Home con lista de productos	✅
+- 2	Búsqueda de productos por nombre ✅
+- 3	Añadir productos a carrito de compra indicando cantidad	✅
+- 4	Ver carrito de compras (off canvas)	✅
+- 5	Lista de productos a través de simulación de API (api.js)	✅
+- 6	Respuesta asíncrona a través de promesa	✅
+- 7	Inicio de sesión con mail y contraseña (auth.js)✅
+- 8	Autenticación con credenciales válidas (correo@tecnochile.com // Password: 123456) ✅
+- 9	Mensaje de error con credenciales inválidas ✅
+- 10  Link a login en Navbar ✅
+- 11  Cerrar sesión en menú desplegable en Navbar ✅
+- 12  Formulario para inicio de sesión ✅
+- 13  Agregar y eliminar productos del carrito individualmente ✅
+- 14	Cálculo de precio total	✅
+- 15	Vaciar carrito completamente ✅
 
 ## Instalación y Ejecución Local
 
-## Instalar dependencias
-
+### Instalar dependencias
 cd VUE_TecnoChile
 npm install
 
-## Ejecutar el servidor de desarrollo
-
+### Ejecutar el servidor de desarrollo
 npm run dev
 
 
-## Abrir en navegador
-
+### Abrir en navegador
 Por defecto estará disponible en http://localhost:5173/ (o puerto indicado por Vite)
-
-
