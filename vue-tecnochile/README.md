@@ -122,7 +122,7 @@ VUE_TecnoChile/
 ## Instalación y Ejecución Local
 
 ### Instalar dependencias
-cd VUE_TecnoChile
+cd vue-tecnoChile
 npm install
 
 ### Ejecutar el servidor de desarrollo
